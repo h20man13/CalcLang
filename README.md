@@ -18,48 +18,48 @@ Speaking of the grammar the grammar of CalcLang is below
 
 Taken from haskell parser generator
 
-  Line -> Ident '=' Expression 'end'                      (1)
-	Line -> Ident '(' Paramaters ')' '=' Expression 'end'   (2)
-	Line -> Expression 'end'                                (3)
-	Paramaters -> Ident                                     (4)
-	Paramaters -> Paramaters ',' Ident                      (5)
-	Expression -> Logical 'for' Logical 'else' Expression   (6)
-	Expression -> Logical                              (7)
-	Logical -> Logical 'and' Relational                (8)
-	Logical -> Logical 'or' Relational                 (9)
-	Logical -> Relational                              (10)
-	Relational -> Expr1 '<' Expr1                      (11)
-	Relational -> Expr1 '>' Expr1                      (12)
-	Relational -> Expr1 '<=' Expr1                     (13)
-	Relational -> Expr1 '>=' Expr1                     (14)
-	Relational -> Expr1 '!=' Expr1                     (15)
-	Relational -> Expr1 '==' Expr1                     (16)
-	Relational -> Expr1                                (17)
-	Expr1 -> Expr1 '+' Term                            (18)
-	Expr1 -> Expr1 '-' Term                            (19)
-	Expr1 -> Term                                      (20)
-	Term -> Term '*' Unary                             (21)
-	Term -> Term '/' Unary                             (22)
-	Term -> Term '.' Unary                             (23)
-	Term -> Unary                                      (24)
-	Unary -> '-' Unary                                 (25)
-	Unary -> 'not' Unary                               (26)
-	Unary -> '+' Unary                                 (27)
-	Unary -> Power                                     (28)
-	Power -> Primary '^' Power                         (29)
-	Power -> Primary                                   (30)
-	Primary -> '(' Expression ')'                      (31)
-	Primary -> '(' Expressions ')'                     (32)
-	Primary -> '(' Applications ')' '(' Expressions ')'   (33)
-	Primary -> '{' Expressions '}'                     (34)
-	Primary -> Ident '(' Expressions ')'               (35)
-	Primary -> Ident                                   (36)
-	Primary -> '$' Number                              (37)
-	Primary -> Number '%'                              (38)
-	Primary -> Number                                  (39)
-	Number -> IntT                                     (40)
-	Number -> RealT                                    (41)
-	Expressions -> Expression                          (42)
-	Expressions -> Expressions ',' Expression          (43)
-	Applications -> Ident                              (44)
-	Applications -> Applications 'o' Ident             (45)
+  <p>Line -> Ident '=' Expression 'end'                      (1)<br>
+	Line -> Ident '(' Paramaters ')' '=' Expression 'end'   (2)<br>
+	Line -> Expression 'end'                                (3)<br>
+	Paramaters -> Ident                                     (4)<br>
+	Paramaters -> Paramaters ',' Ident                      (5)<br>
+	Expression -> Logical 'for' Logical 'else' Expression   (6)<br>
+	Expression -> Logical                              (7)<br>
+	Logical -> Logical 'and' Relational                (8)<br>
+	Logical -> Logical 'or' Relational                 (9)<br>
+	Logical -> Relational                              (10)<br>
+	Relational -> Expr1 '<' Expr1                      (11)<br>
+	Relational -> Expr1 '>' Expr1                      (12)<br>
+	Relational -> Expr1 '<=' Expr1                     (13)<br>
+	Relational -> Expr1 '>=' Expr1                     (14)<br>
+	Relational -> Expr1 '!=' Expr1                     (15)<br>
+	Relational -> Expr1 '==' Expr1                     (16)<br>
+	Relational -> Expr1                                (17)<br>
+	Expr1 -> Expr1 '+' Term                            (18)<br>
+	Expr1 -> Expr1 '-' Term                            (19)<br>
+	Expr1 -> Term                                      (20)<br>
+	Term -> Term '*' Unary                             (21)<br>
+	Term -> Term '/' Unary                             (22)<br>
+	Term -> Term '.' Unary                             (23)<br>
+	Term -> Unary                                      (24)<br>
+	Unary -> '-' Unary                                 (25)<br>
+	Unary -> 'not' Unary                               (26)<br>
+	Unary -> '+' Unary                                 (27)<br>
+	Unary -> Power                                     (28)<br>
+	Power -> Primary '^' Power                         (29)<br>
+	Power -> Primary                                   (30)<br>
+	Primary -> '(' Expression ')'                      (31)<br>
+	Primary -> '(' Expressions ')'                     (32)<br>
+	Primary -> '(' Applications ')' '(' Expressions ')'   (33)<br>
+	Primary -> '{' Expressions '}'                     (34)<br>
+	Primary -> Ident '(' Expressions ')'               (35)<br>
+	Primary -> Ident                                   (36)<br>
+	Primary -> '$' Number                              (37)<br>
+	Primary -> Number '%'                              (38)<br>
+	Primary -> Number                                  (39)<br>
+	Number -> IntT                                     (40)<br>
+	Number -> RealT                                    (41)<br>
+	Expressions -> Expression                          (42)<br>
+	Expressions -> Expressions ',' Expression          (43)<br>
+	Applications -> Ident                              (44)<br>
+	Applications -> Applications 'o' Ident             (45)</p>
