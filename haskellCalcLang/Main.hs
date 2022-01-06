@@ -11,12 +11,19 @@ runConsole vT fT = do
                    hFlush stdout;
                    line  <- getLine;
                    case line of
-                     ":Quit" -> print "Exited Program Successfully!!!"
+                     "" -> runConsole vT fT
+                     ":Help" -> do
+                                handle <- openFile "Help.txt" ReadMode
+                                contents <- hGetContents handle
+                                putStrLn contents
+                                (runConsole vT fT)
+                     ":Quit" -> putStrLn "Exited Program Successfully!!!"
                      line -> do
                              let tokens = (genTokens (line ++ "\n"))
                              let ast = (parseAst tokens)
                              (nVT, nFT) <- (interpret ast vT fT)
                              (runConsole nVT nFT)
+                            
                             
                    
 main :: IO ()

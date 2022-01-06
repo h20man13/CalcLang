@@ -76,7 +76,13 @@ interpret line vT fT = interpretLine line vT fT
 interpretLine :: Line -> VTable -> FTable -> IO (VTable, FTable)
 interpretLine line vT fT = case line of
                      FunctionAssignment name param expr -> return (vT, addEntry fT (name,(param, expr)))
-                     VariableAssignment name expr -> return (addEntry vT (name, interpretExpression expr vT fT), fT)
+                     VariableAssignment name expr -> do
+                                                     let val = (interpretExpression expr vT fT)
+                                                     case val of
+                                                       ErrorVal _ -> do
+                                                                     (putStrLn (toString val))
+                                                                     return (vT, fT)
+                                                       val -> return (addEntry vT (name, val), fT)
                      PrintExpression expr -> do
                                              putStrLn (toString (interpretExpression expr vT fT))
                                              return (vT, fT)

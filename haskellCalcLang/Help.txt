@@ -1,0 +1,47 @@
+Welcome to Calclang a language created by Mr. Bauer in order to play around with functions
+Commands are prefixed with a colon(:) and begin with a capital letter in CalcLang. A full list of commands is below:
+
+Command List
+---------------------------------------------------------------------
+    Quit(:Quit) Exits the program
+    Enviro(:Enviro) Lists all declared variables and functions since the start of the session
+    Variables(:Variables) Lists all declared variables and since the start of the session
+    Functions(:Functions) Lists all declared functions since the start of the session
+    Prompt(:Prompt) Sets the prompt symbol before you begin typing to something else
+
+Identifiers
+---------------------------------------------------------------------
+    All identifiers (Variable Names, Function Names) must begin with anyletter that isnt a lowercase o and they must only contain letters in their name
+
+Constants
+---------------------------------------------------------------------
+    Sets: {1,4,6}, {5, 9, 8, 0, 1}, etc...
+    Tuples: (8,1,4), (2,4) - Must have two or more elements
+    Numbers: Base-10 numbers only. Can be positive or negative and with floating point values
+    Percents: 10%, 100%, 1000%. In operations these appear as .10, 1.00 and 10.00 respectively
+    Dollar Amounts: $10, $100, $1000
+
+Expressions
+---------------------------------------------------------------------
+    Typing in an expression will print out the result on the line below it
+    (Ex: Typing in 3 + 2 will print out 5 on the line below it)
+    (Ex: Typing in f(1) will yeild the result of f(1))
+    (Ex: Typing in (f o g)(1) will yeild the result of f(g(1))
+    (Ex: Typing in f({3, 4, 5}) or f((4, 5, 6)) will apply the function to every element in the set or tuple)
+    (Ex: Typing in 40 + (3, 6, 7) will yeild a tuple (43, 46, 47)
+    (Ex: Typing in {2, 4, 6} / 2 will yeild a set {1,2,3}
+
+Variable Declarations/Assignments
+---------------------------------------------------------------------
+    Variables are declared in the usual fassion. They do not have return types assosciated with them at run time. Therefor variables types can change via assignments
+    The grammar for variable assignments is the following <Name> = <Expression>
+    Where the name of the variable can not start with a lowercase o like stated above
+
+Function Declarations
+---------------------------------------------------------------------
+    Functions are declared in the usual fassion. They allways return a result in CalcLang.
+    The grammer for functions is the following <Name> ( <Paramater List> ) = <Expression>
+    Where the name of the function can not start with a lowercase o like stated above and Paramaters are seperated by commas
+
+
+---------------------------------------------------------------------

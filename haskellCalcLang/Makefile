@@ -7,4 +7,4 @@ PARSER:
 PROGRAM:
 	ghc -o image Lexer.hs Parser.hs Interpreter.hs Main.hs
 CLEAN:
-	rm -f *.o *.hi *.info Lexer.hs Parser.hs
+	rm -f *.o *.hi *.info Lexer.hs Parser.hs image
